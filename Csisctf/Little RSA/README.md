@@ -12,9 +12,8 @@ c=32949
 n=64741
 e=42667
 ```
-CHANGE
-CHANGE
-We can do it using the formal way for which you can look at this [Writeup](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
+
+We can do it using the formal way for which you can look at this [Writeup](https://github.com/DaBaddest/CTF-Writeups/tree/master/Csisctf/Rivest%20Shamir%20Adleman)
 
 In this approach I didn't do it in the formal way because n is too small
 
