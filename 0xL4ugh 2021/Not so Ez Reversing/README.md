@@ -2,8 +2,6 @@
 
 It was a reversing challenge in the 0xL4ugh CTF.
 
-It was the least solved reversing chall in the CTF.
-
 In this chall we get a **rar** file **NotEzRE.rar** which has two files inside it **data.dat & rev_challenge**
 
 ## Basic Recon
