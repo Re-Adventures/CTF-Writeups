@@ -160,7 +160,12 @@ But doing this character by character and then opening it in a disassembler take
 
 ## Possible Approaches
 
-1. Symbolic execution: tools like `angr` or `manticore`can be used for this approach but these are automatic solvers, and it sounds boring to just run a simple script to solve a crackme.
+1. Symbolic execution: ~~tools like `angr` or `manticore`can be used for this approach but these are automatic solvers, and it sounds boring to just run a simple script to solve a crackme.~~
+
+This approach doesn't work.According to the author of this challenge:
+
+*angr can't really deal with self-modifying code it might be able to deal with self-modifying concrete code, but definitely not self-modifying symbolic code*
+
 
 2. Dynamic analysis: this would require us to run the program and count the number of instructions executed. For the correct input, it should execute the highest number of instructions.
 
