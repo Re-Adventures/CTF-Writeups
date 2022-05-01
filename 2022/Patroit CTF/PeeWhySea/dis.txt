@@ -1,0 +1,83 @@
+  3           0 LOAD_CONST               0 (0)
+              2 LOAD_CONST               1 (None)
+              4 IMPORT_NAME              0 (sys)
+              6 STORE_NAME               0 (sys)
+
+  4           8 LOAD_NAME                1 (len)
+             10 LOAD_NAME                0 (sys)
+             12 LOAD_ATTR                2 (argv)
+             14 CALL_FUNCTION            1
+             16 LOAD_CONST               2 (2)
+             18 COMPARE_OP               3 (!=)
+             20 POP_JUMP_IF_FALSE       38 (to 76)
+
+  5          22 LOAD_NAME                3 (print)
+             24 LOAD_CONST               3 ('One argument required')
+             26 CALL_FUNCTION            1
+             28 POP_TOP
+
+  7          30 LOAD_NAME                0 (sys)
+             32 LOAD_METHOD              4 (exit)
+             34 CALL_METHOD              0
+             36 POP_TOP
+
+  8          38 LOAD_NAME                0 (sys)
+             40 LOAD_ATTR                2 (argv)
+             42 LOAD_CONST               4 (1)
+             44 BINARY_SUBSCR
+             46 STORE_NAME               5 (arg)
+
+ 10          48 LOAD_CONST               5 ('ABCDEFGHIJKLMNOP')
+             50 STORE_NAME               6 (key)
+
+ 12          52 LOAD_CONST               6 ('')
+             54 LOAD_METHOD              7 (join)
+             56 LOAD_CONST               7 (<code object <listcomp> at 0x000002319EE37730, file "./flag-checker.py", line 10>)
+             58 LOAD_CONST               8 ('<listcomp>')
+             60 MAKE_FUNCTION            0
+             62 LOAD_NAME                8 (zip)
+             64 LOAD_NAME                5 (arg)
+             66 LOAD_NAME                6 (key)
+             68 CALL_FUNCTION            2
+             70 GET_ITER
+             72 CALL_FUNCTION            1
+             74 CALL_METHOD              1
+        >>   76 STORE_NAME               9 (encode)
+
+ 13          78 LOAD_NAME                9 (encode)
+             80 LOAD_CONST               9 ('110117023e3273237a157f133d372c2d')
+             82 COMPARE_OP               2 (==)
+             84 POP_JUMP_IF_FALSE       96 (to 192)
+
+ 15          86 LOAD_NAME                3 (print)
+             88 LOAD_CONST              10 ('You have the correct flag!')
+             90 CALL_FUNCTION            1
+             92 POP_TOP
+             94 JUMP_FORWARD             8 (to 112)
+             96 LOAD_NAME                3 (print)
+             98 LOAD_CONST              11 ('Wrong flag')
+            100 CALL_FUNCTION            1
+            102 POP_TOP
+            104 LOAD_CONST               1 (None)
+            106 RETURN_VALUE
+
+Disassembly of <code object <listcomp> at 0x000002319EE37730, file "./flag-checker.py", line 10>:
+          0 BUILD_LIST               0
+          2 LOAD_FAST                0 (.0)
+          4 FOR_ITER                30 (to 66)
+          6 UNPACK_SEQUENCE          2
+    >>    8 STORE_FAST               1 (a)
+         10 STORE_FAST               2 (b)
+         12 LOAD_CONST               0 ('{:02x}')
+         14 LOAD_METHOD              0 (format)
+         16 LOAD_GLOBAL              1 (ord)
+         18 LOAD_FAST                1 (a)
+         20 CALL_FUNCTION            1
+         22 LOAD_GLOBAL              1 (ord)
+         24 LOAD_FAST                2 (b)
+         26 CALL_FUNCTION            1
+         28 BINARY_XOR
+         30 CALL_METHOD              1
+         32 LIST_APPEND              2
+         34 JUMP_ABSOLUTE            4 (to 8)
+         36 RETURN_VALUE
